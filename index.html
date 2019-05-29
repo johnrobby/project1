@@ -12,7 +12,18 @@
   <script type = "text/javascript"
   src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-</script> 
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7IN9LY4Uvj626eMOqsdoPWlmWRsE1E3o&callback=initMap"
+async defer></script>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 200px;
+          width: 200px;
+        }
+      </style>
+    
 </head>
 
 <body>
@@ -79,12 +90,23 @@
       </div>
 
       <div class="col s12 m8 l9 light-green lighten-1">
-        <img class="icon">
-        <p class="weather"></p>
-        <p class="temp"></p>
-      </div>
+         
+        
+        
+
+
+          <!--weather content-->
+          <div class="weatherContainer">
+            <img class="icon">
+            <p class="weather"></p>
+            <p class="temp"></p>
+          </div>
+          <div id='map'></div>
+            </div>
 
     </div>
 </body>
-<script type="text/javascript" src="./assets/javascript/app.js"></script>
+<script type="text/javascript" src="./assets/javascript/app.js">
+</script>
+
 </html>
