@@ -37,21 +37,3 @@ function initMap() {
       infoWindow.open(map, marker);
   });
 }
-
-
-
-                  //////////WEATHER API//////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Portland,Oregon4&units=imperial&&APPID=d95b5935ea6d3467f2233abdafd385fd", function(data) {
-console.log(data)
-
-var icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-var temp = data.main.temp;
-var weather = data.weather[0].main;
-
-
-$('.icon').attr('src', icon);
-$('.weather').append(weather);
-$('.temp').append(temp);
-
-});

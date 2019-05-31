@@ -25,6 +25,12 @@ async defer></script>
       </style>
     
 </head>
+<style>
+  #map{
+    width:500px;
+    height: 500px;
+  }
+</style>
 
 <body>
     <div class="row">
@@ -90,23 +96,14 @@ async defer></script>
       </div>
 
       <div class="col s12 m8 l9 light-green lighten-1">
-         
-        
-        
-
-
-          <!--weather content-->
-          <div class="weatherContainer">
-            <img class="icon">
-            <p class="weather"></p>
-            <p class="temp"></p>
-          </div>
-          <div id='map'></div>
-            </div>
-
+        <img class="icon">
+        <p class="weather"></p>
+        <p class="temp"></p>
+      </div>
+          <div id="map"></div>
     </div>
 </body>
-<script type="text/javascript" src="./assets/javascript/app.js">
-</script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7IN9LY4Uvj626eMOqsdoPWlmWRsE1E3o&callback=initMap"
+    async defer></script>
+<script type="text/javascript" src="./assets/javascript/app.js"></script>
 </html>
