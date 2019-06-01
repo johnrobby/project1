@@ -132,6 +132,11 @@ function onPlaceChanged() {
   } else {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
+  if (place.address_components[3].short_name === "US"){
+    generateTrumpCard();
+  } else {
+    clearQuoteCard();
+  } 
 }
 
 // Search for hotels in the selected city, within the viewport of the map.
@@ -299,6 +304,14 @@ function buildIWContent(place) {
 }
 
 //Ajax Call for Trump Quotes
+
+function clearQuoteCard(){
+  $("#quote-area").empty();
+}
+
+
+function generateTrumpCard(){
+
 var corsBypass = "https://cors-anywhere.herokuapp.com/";
 var trumpURL = "https://api.tronalddump.io/random/quote";
 var trumpQuote;
@@ -308,16 +321,24 @@ $.ajax({
   method: "GET"
 }).then(function(response){
   trumpQuote = response;
-  console.log(trumpQuote.value);
-  console.log(typeof trumpQuote.value);
+  console.log(trumpQuote);
   var trumpCard = $("<div class='card blue-grey darken-1' id='trump-card'>");
   var cardContent = $("<div class='card-content white-text'>");
-  cardContent.text(trumpQuote.value);
+  var p = $("<p>");
+  var p1 = $("<p>");
+  var h = $("<span class='card-title'>");
+  h.text("Glorious Leader Trump Says: ");
+  p.text(trumpQuote.value);
+  p1.text("On: " + trumpQuote.appeared_at);
+  cardContent.append(h);
+  cardContent.append(p);
+  cardContent.append(p1)
   trumpCard.append(cardContent);
 
   $("#quote-area").append(trumpCard);
 });
-
+}
+// generateTrumpCard();
 
 
 
