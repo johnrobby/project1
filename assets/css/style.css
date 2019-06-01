@@ -1,16 +1,13 @@
 #map {
-    height: 350px;
-    width: 350px;
-    float: left;
+    height: 400px;
+    width: auto;
 }
 #listing {
-width: 500px;
+width: auto;
 height: 350px;
 overflow: auto;
 cursor: pointer;
 overflow-x: hidden;
-float: left;
-margin-left: 5px;
 }
 #findhotels {
 position: absolute;
@@ -55,7 +52,7 @@ height: 24px;
 }
 #resultsTable {
 border-collapse: collapse;
-width: 500px;
+width: 100%;
 }
 #rating {
 font-size: 13px;
@@ -70,4 +67,10 @@ text-align: right;
 }
 .iw_table_icon {
 text-align: right;
+}
+#userInfo {
+    margin-top: 5px;
+}
+#mapRow {
+    margin-top: -15px;
 }
