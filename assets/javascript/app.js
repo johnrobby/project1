@@ -43,7 +43,7 @@ function initMap() {
                   //////////WEATHER API//////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Portland,Oregon4&units=imperial&&APPID=d95b5935ea6d3467f2233abdafd385fd", function(data) {
-console.log(data)
+// console.log(data)
 
 var icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
 var temp = data.main.temp;
@@ -54,4 +54,40 @@ $('.icon').attr('src', icon);
 $('.weather').append(weather);
 $('.temp').append(temp);
 
+});
+
+
+/*   Wiki API   //FEATURE SCRAPPED/DEVELOPMENT PAUSED INDEFINITELY//
+var userInput = "Chicago";
+var wikiURL2 = "http://en.wikipedia.org/w/api.php?format=xml&action=parse&pageids=";
+var wikiURL = "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + userInput + "&format=json";
+
+var wikiPage;
+
+$.ajax({
+  url: corsBypass + wikiURL,
+  method: "GET"
+}).then(function(response){
+  console.log(response);
+  var pageID = response.query.search[0].pageid;
+  $.ajax({
+    url: corsBypass + wikiURL2 + pageID,
+    method:"GET"
+  }).then(function(result){
+    console.log($(result));
+    wikiPage = result;
+    document.append(wikiPage);
+  })
+});
+ */
+
+var corsBypass = "https://cors-anywhere.herokuapp.com/";
+var trumpURL = "https://api.tronalddump.io/random/quote";
+var trumpQuote;
+$.ajax({
+  url: corsBypass + trumpURL,
+  method: "GET"
+}).then(function(response){
+  trumpQuote = response;
+  console.log(trumpQuote);
 });
