@@ -276,13 +276,10 @@ function buildIWContent(place) {
     document.getElementById('iw-rating-row').style.display = '';
     document.getElementById('iw-rating').innerHTML = ratingHtml;
     }
-  } else {
+  }
+ else {
     document.getElementById('iw-rating-row').style.display = 'none';
   }
-
-
-});
-
 
 
   // The regexp isolates the first part of the URL (domain plus subdomain)
@@ -300,13 +297,19 @@ function buildIWContent(place) {
     document.getElementById('iw-website-row').style.display = 'none';
   }
 }
+
+
 var corsBypass = "https://cors-anywhere.herokuapp.com/";
 var trumpURL = "https://api.tronalddump.io/random/quote";
 var trumpQuote;
+
 $.ajax({
   url: corsBypass + trumpURL,
   method: "GET"
 }).then(function(response){
   trumpQuote = response;
-  console.log(trumpQuote);
+  console.log(trumpQuote.value);
 });
+
+
+var googlePlaceKey = "AIzaSyB7IN9LY4Uvj626eMOqsdoPWlmWRsE1E3o";

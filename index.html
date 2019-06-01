@@ -104,18 +104,23 @@
       </div>
 
     </div>
-  <script type="text/javascript" src="./assets/javascript/app.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7IN9LY4Uvj626eMOqsdoPWlmWRsE1E3o&libraries=places&callback=initMap"
-      async defer></script>
+      async></script>
+  <script type="text/javascript" src="./assets/javascript/app.js"></script>  
   <script>
-    (function($){
-      $(function(){
+     ( 
+       
+     function ($){
+      $( function (){
         // Plugin initialization
         $('select').not('.disabled').formSelect();
       }); 
-    })(jQuery); // end of jQuery name space
+    }
+    
+    
+    ) ($); // end of jQuery name space
   </script>
 </body>
 
