@@ -315,6 +315,7 @@ function generateTrumpCard(){
 var corsBypass = "https://cors-anywhere.herokuapp.com/";
 var trumpURL = "https://api.tronalddump.io/random/quote";
 var trumpQuote;
+clearQuoteCard();
 
 $.ajax({
   url: corsBypass + trumpURL,
