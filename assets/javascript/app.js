@@ -340,7 +340,3 @@ $.ajax({
 });
 }
 // generateTrumpCard();
-
-
-
-var googlePlaceKey = "AIzaSyB7IN9LY4Uvj626eMOqsdoPWlmWRsE1E3o";
