@@ -245,6 +245,7 @@ function showInfoWindow() {
       });
 }
 
+
 // Load the place information into the HTML elements used by the info window.
 function buildIWContent(place) {
   document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
@@ -279,6 +280,11 @@ function buildIWContent(place) {
     document.getElementById('iw-rating-row').style.display = 'none';
   }
 
+
+});
+
+
+
   // The regexp isolates the first part of the URL (domain plus subdomain)
   // to give a short URL for displaying in the info window.
   if (place.website) {
@@ -294,3 +300,13 @@ function buildIWContent(place) {
     document.getElementById('iw-website-row').style.display = 'none';
   }
 }
+var corsBypass = "https://cors-anywhere.herokuapp.com/";
+var trumpURL = "https://api.tronalddump.io/random/quote";
+var trumpQuote;
+$.ajax({
+  url: corsBypass + trumpURL,
+  method: "GET"
+}).then(function(response){
+  trumpQuote = response;
+  console.log(trumpQuote);
+});
