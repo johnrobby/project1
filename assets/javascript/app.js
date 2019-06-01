@@ -298,7 +298,7 @@ function buildIWContent(place) {
   }
 }
 
-
+//Ajax Call for Trump Quotes
 var corsBypass = "https://cors-anywhere.herokuapp.com/";
 var trumpURL = "https://api.tronalddump.io/random/quote";
 var trumpQuote;
@@ -309,7 +309,16 @@ $.ajax({
 }).then(function(response){
   trumpQuote = response;
   console.log(trumpQuote.value);
+  console.log(typeof trumpQuote.value);
+  var trumpCard = $("<div class='card blue-grey darken-1' id='trump-card'>");
+  var cardContent = $("<div class='card-content white-text'>");
+  cardContent.text(trumpQuote.value);
+  trumpCard.append(cardContent);
+
+  $("#quote-area").append(trumpCard);
 });
+
+
 
 
 var googlePlaceKey = "AIzaSyB7IN9LY4Uvj626eMOqsdoPWlmWRsE1E3o";
